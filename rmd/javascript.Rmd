@@ -1,7 +1,7 @@
 ---
 jupyter:
   jupytext:
-    formats: notebooks//ipynb,rmd//Rmd
+    formats: notebooks/js//ipynb,rmd//Rmd
     text_representation:
       extension: .Rmd
       format_name: rmarkdown
@@ -22,7 +22,7 @@ jupyter:
 ## With Javascript
 
 ```{javascript}
-console.log('Hello World')
+console.log('Hello world')
 ```
 
 ```{javascript}
@@ -31,4 +31,33 @@ function multiply(x,y) { return x*y }
 
 ```{javascript}
 multiply(2,3)
+```
+
+## Import Axios and call APIs
+
+```{javascript}
+axios = require('axios')
+```
+
+```{javascript}
+var apiURL = 'http://localhost:5000'
+```
+
+```{javascript}
+axios.get(this.apiURL + '/todos')
+  .then(r => (console.log(r.data), console.log(r.status)))
+```
+
+```{javascript}
+axios.post(this.apiURL + '/todos',
+          {'task': 'do something else'})
+  .then(r => console.log(r.data))
+```
+
+```{javascript}
+var id = 4
+```
+
+```{javascript}
+axios.delete(this.apiURL + '/todos/' + id)
 ```

@@ -42,5 +42,5 @@ q = {}
 for table in tables:
     q[table] = f"SELECT * FROM {table}"
     print(table)
-    print(pd.read_sql(q[table], db))
+    print(pd.read_sql(q[table], db, index_col='id'))
 ```

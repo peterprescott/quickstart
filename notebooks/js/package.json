@@ -1,0 +1,10 @@
+{
+  "name": "notebooks",
+  "version": "1.0.0",
+  "description": "folder for js jupyter notebooks",
+  "main": " ",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.2"
+  }
+}
