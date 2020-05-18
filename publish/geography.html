@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<title>geography</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+</script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" />
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+
+<link rel="stylesheet" href="pandoc.css" />
+<!--[if lt IE 9]>
+<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+<![endif]-->
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+
+
+
+
+<h1 id="geographic-shapes">Geographic Shapes</h1>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="im">import</span> geopandas <span class="im">as</span> gpd</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>LCR <span class="op">=</span> gpd.read_file(<span class="st">&#39;../data/LiverpoolCityRegion.geojson&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>LCR.head()</span></code></pre></div>
+<pre><code>      OA11CD Local Authority Name Subgroup Code  \
+0  E00032987            Liverpool           3a1
+1  E00032988            Liverpool           2a3
+2  E00032989            Liverpool           3b3
+3  E00032990            Liverpool           3d3
+4  E00032991            Liverpool           3b3
+
+                                            geometry
+0  POLYGON ((-2.97625 53.39928, -2.97623 53.39910...
+1  POLYGON ((-2.96889 53.39860, -2.96891 53.39835...
+2  POLYGON ((-2.96437 53.39898, -2.96439 53.39897...
+3  POLYGON ((-2.96452 53.39792, -2.96453 53.39797...
+4  POLYGON ((-2.96698 53.39773, -2.96691 53.39772...</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">10</span>))</span>
+<span id="cb5-2"><a href="#cb5-2"></a>LCR.plot(column<span class="op">=</span><span class="st">&#39;Subgroup Code&#39;</span>, ax<span class="op">=</span>ax)</span>
+<span id="cb5-3"><a href="#cb5-3"></a>plt.show()</span></code></pre></div>
+<p><img src="../figures/geography_figure4_1.png" /><br />
+</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># to run this from within the notebook, first comment out this line and save...</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="co"># ...and then uncomment the line to run it -- otherwise, Pweave will get stuck...</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="co"># ...in an infinite loop and be unable to finish processing the notebook</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="co"># ! ../bits/publi.sh</span></span></code></pre></div>
+<h2 id="references">References</h2>
+<!-- <nav id="toc" data-toggle="toc"></nav> -->
+
+</body>
+</html>

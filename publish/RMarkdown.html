@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<title>RMarkdown</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+</script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" />
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+
+<link rel="stylesheet" href="pandoc.css" />
+<!--[if lt IE 9]>
+<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+<![endif]-->
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+
+
+
+
+<h1 id="use-rmarkdown">Use RMarkdown…</h1>
+<p>…when you want to weave together code (it doesn’t have to be R!), and narrative (efficiently written in Markdown).</p>
+<h2 id="with-python">With Python</h2>
+<p>Let’s demonstrate with the classic entrypoint to Python:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="bu">print</span>(<span class="st">&#39;hello world&#39;</span>)</span></code></pre></div>
+<pre><code>hello world</code></pre>
+<p>And now we’ll do something a tiny bit more complicated: use numpy to generate an array of twenty random numbers, which we’ll then use matplotlit to plot.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>numbers <span class="op">=</span> np.random.rand(<span class="dv">20</span>,<span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>plt.plot(numbers)</span>
+<span id="cb5-2"><a href="#cb5-2"></a>plt.show()</span></code></pre></div>
+<p><img src="../figures/RMarkdown_figure4_1.png" /><br />
+</p>
+<p>Now let’s add a citation (I’m using Zotero, with the BetterBibTex plugin, and citation keys in the format <code>[authForeIni][authEtAl][year]</code>, and then exporting the bibliography as <code>refs.bib</code>, which needs to be saved in our <code>bits</code> folder) – maybe something about Jupyter notebooks <span class="citation" data-cites="TKluyverEtAl2016">(Kluyver et al. 2016)</span> – and we can run our bash script to turn this into a publishable PDF…</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># to run this from within the notebook, first comment out this line and save...</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="co"># ...and then uncomment the line to run it -- otherwise, Pweave will get stuck...</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="co"># ...in an infinite loop and be unable to finish processing the notebook</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="co"># ! ../bits/publi.sh RMarkdown</span></span></code></pre></div>
+<h2 class="unnumbered" id="references">References</h2>
+<div id="refs" class="references hanging-indent" role="doc-bibliography">
+<div id="ref-TKluyverEtAl2016">
+<p><span class="csl-baseline">Kluyver, T.</span>; <span class="csl-baseline">Ragan-Kelley, B.</span>; <span class="csl-baseline">Pérez, F.</span>; <span class="csl-baseline">Granger, B.E.</span>; <span class="csl-baseline">Bussonnier, M.</span>; <span class="csl-baseline">Frederic, J.</span>; <span class="csl-baseline">et al.</span> 2016. Jupyter Notebooks-a publishing format for reproducible computational workflows. <em>ELPUB</em>: 87–90.</p>
+</div>
+</div>
+<!-- <nav id="toc" data-toggle="toc"></nav> -->
+
+</body>
+</html>
