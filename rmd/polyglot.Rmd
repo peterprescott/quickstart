@@ -1,0 +1,71 @@
+---
+jupyter:
+  jupytext:
+    formats: notebooks//ipynb,rmd//Rmd
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.2'
+      jupytext_version: 1.4.2
+  kernelspec:
+    display_name: SoS
+    language: sos
+    name: sos
+---
+
+<!-- #region kernel="SoS" -->
+# Polyglot Notebooks
+<!-- #endregion -->
+
+<!-- #region kernel="SoS" -->
+With the [SoS kernel](https://vatlab.github.io/sos-docs/index.html#content) we can run multiple kernels for different languages in a single notebook, and pass variables back and forth between them.
+<!-- #endregion -->
+
+<!-- #region kernel="SoS" -->
+Let's pass an integer around a few different languages to demonstrate:
+<!-- #endregion -->
+
+```{sos kernel="Python3"}
+x = 0
+print(x)
+x += 1
+```
+
+```{sos kernel="JavaScript"}
+# %get x --from Python3
+console.log(x)
+x++
+```
+
+```{sos kernel="Julia"}
+# %get x --from JavaScript
+println(x)
+x += 1
+```
+
+```{sos kernel="Ruby"}
+# %get x --from Julia
+puts x
+x += 1
+```
+
+```{sos kernel="R"}
+# %get x --from Ruby
+print(x)
+x <- x+1
+```
+
+```{sos kernel="Python2"}
+# %get x --from R
+print x
+x += 1
+```
+
+```{sos kernel="Bash"}
+# %get x --from Python2
+echo $x
+```
+
+```{sos kernel="SoS"}
+
+```
